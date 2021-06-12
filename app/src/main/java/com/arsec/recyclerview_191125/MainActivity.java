@@ -20,11 +20,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        gameTitles = new ArrayList<>();
+        gameTitles.add(new Game("NFS: The Run", 2011));
+        gameTitles.add(new Game("NFS: Rivals", 2014));
+        gameTitles.add(new Game("Assassin\'s Creed: Black Flag", 2013));
+        gameTitles.add(new Game("GTA V", 2013));
+
         recyclerView = findViewById(R.id.rv_GameTitles);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerAdapter_gameNames = new RecyclerAdapter_GameNames(gameTitles, this);
-        gameTitles = new ArrayList<>();
         recyclerView.setAdapter(recyclerAdapter_gameNames);
+
     }
 }
